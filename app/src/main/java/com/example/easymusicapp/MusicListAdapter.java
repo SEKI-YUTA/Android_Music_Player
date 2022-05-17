@@ -1,7 +1,9 @@
 package com.example.easymusicapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,9 +33,15 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         AudioModel songData = songsList.get(position);
         holder.titleTextView.setText(songData.getTitle());
+
+        if(MyMediaPlayer.currentIndex == position) {
+            holder.titleTextView.setTextColor(Color.parseColor("#FF0000"));
+        } else {
+            holder.titleTextView.setTextColor(Color.parseColor("#000000"));
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,6 +8,7 @@
     android:layout_marginRight="5dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
     xmlns:tools="http://schemas.android.com/tools"
     >
 
